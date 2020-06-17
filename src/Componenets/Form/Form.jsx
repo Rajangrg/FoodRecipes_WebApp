@@ -4,10 +4,10 @@ import React from 'react'
 import { Button} from 'semantic-ui-react';
 import { Input } from 'semantic-ui-react'
 
-const Form =()=>{
+const Form =(props)=>{
 	return(
 		<div>
-			<form>
+			<form onSubmit={props.findReceipe}>
 				<Input focus  icon='search' iconPosition='left' type="text" placeholder="..." name="search"></Input>
 				<Button inverted color='blue'>Search</Button>
 			</form>

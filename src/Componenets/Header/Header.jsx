@@ -1,11 +1,32 @@
 import React from 'react';
 
-const Header = () =>{
+// components
+import Form from '../Form/Form';
+
+//ui library
+import { Menu } from 'semantic-ui-react';
+
+
+const Header = (props) => {
 	return (
 		<div>
-			<h1>Food Recipes</h1>
+			<Menu>
+				<Menu.Item header>Food Recipes</Menu.Item>
+				<Menu.Item
+					name='Home'
+				/>
+				<Menu.Item position='right'>
+					<Form findReceipe={props.getReceipe}> </Form>
+				</Menu.Item>
+			</Menu>
+
 		</div>
 	);
 }
 
 export default Header;
+
+
+/* 	<Menu.Item position='right'>
+					<Form></Form>
+				</Menu.Item>*/
