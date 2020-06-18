@@ -6,8 +6,6 @@ import Recipe from './Componenets/RecipeCard/Recipe';
 
 //Ui components
 
-
-
 class App extends React.Component {
 
   state = {
@@ -26,7 +24,7 @@ class App extends React.Component {
         });
       })
       .catch((error) => {
-        //console.log(error);
+        //console.log(error); //debug
       })
 
   }
@@ -35,11 +33,7 @@ class App extends React.Component {
       <div>
         <Header getReceipe={this.getReceips}></Header>
         <br></br>
-
           <Recipe recipe={this.state.recipes}></Recipe>
-
-
-
       </div>
     );
   }
