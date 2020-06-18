@@ -4,38 +4,42 @@ import React from 'react';
 import Header from './Componenets/Header/Header';
 import Recipe from './Componenets/RecipeCard/Recipe';
 
+//Ui components
+
 
 
 class App extends React.Component {
 
-  state ={
+  state = {
     recipes: []
   }
 
-  getReceips= async (e)=>{
+  getReceips = async (e) => {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
-     await fetch(
+    await fetch(
       `https://cors-anywhere.herokuapp.com/https://recipesapi.herokuapp.com/api/search?q=${recipeName}`)
-      .then(response =>  response.json())
-      .then ((data) =>{
-         this.setState({
-            recipes: data.recipes
-         });
-         console.log(this.state.recipes)
+      .then(response => response.json())
+      .then((data) => {
+        this.setState({
+          recipes: data.recipes
+        });
       })
-      .catch((error)=>{
-          console.log(error);
+      .catch((error) => {
+        //console.log(error);
       })
 
   }
   render() {
     return (
       <div>
-        <Header getReceipe = {this.getReceips}></Header>
+        <Header getReceipe={this.getReceips}></Header>
         <br></br>
 
-        <Recipe recipe={this.state.recipes}></Recipe>
+          <Recipe recipe={this.state.recipes}></Recipe>
+
+
+
       </div>
     );
   }
