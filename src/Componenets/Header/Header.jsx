@@ -10,13 +10,13 @@ import { Menu } from 'semantic-ui-react';
 const Header = (props) => {
 	return (
 		<div>
-			<Menu>
+	<Menu >
 				<Menu.Item header>Food Recipes</Menu.Item>
 				<Menu.Item
 					name='Home'
 				/>
 				<Menu.Item position='right'>
-					<Form findReceipe={props.getReceipe}> </Form>
+					<Form findReceipe={props.getReceipe}></Form>
 				</Menu.Item>
 			</Menu>
 
