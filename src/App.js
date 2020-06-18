@@ -26,8 +26,12 @@ class App extends React.Component {
       .catch((error) => {
         //console.log(error); //debug
       })
-
   }
+
+componentDidUpdate=() =>{
+  const recipe = JSON.stringify(this.state.recipes);
+  localStorage.setItem("recipes", recipe);
+}
   render() {
     return (
       <div>

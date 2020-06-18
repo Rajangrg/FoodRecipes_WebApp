@@ -11,7 +11,7 @@ const Header = (props) => {
 	return (
 		<div>
 	<Menu >
-				<Menu.Item header>Food Recipes</Menu.Item>
+				<Menu.Item header><h1>Food Recipes</h1></Menu.Item>
 				<Menu.Item position='right'>
 					<Form findReceipe={props.getReceipe}></Form>
 				</Menu.Item>
