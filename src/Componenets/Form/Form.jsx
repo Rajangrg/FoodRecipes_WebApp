@@ -9,7 +9,7 @@ const Form =(props)=>{
 		<div>
 			<form onSubmit={props.findReceipe}>
 				<Input focus  icon='search' iconPosition='left' type="text" placeholder="search here..." name="recipeName"></Input>
-				<Button inverted color='orange'>Search</Button>
+				<Button inverted color='blue'>Search</Button>
 			</form>
 		</div>
 	);
