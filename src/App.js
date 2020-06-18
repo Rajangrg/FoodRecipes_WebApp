@@ -28,10 +28,21 @@ class App extends React.Component {
       })
   }
 
-componentDidUpdate=() =>{
-  const recipe = JSON.stringify(this.state.recipes);
-  localStorage.setItem("recipes", recipe);
-}
+  componentDidMount=()=>{
+    const json = localStorage.getItem("recipes");
+    const recipe = JSON.parse(json);
+    this.setState({
+      recipes :recipe
+    })
+    //console.log(this.state.recipes); debug
+  }
+
+  componentDidUpdate=() =>{
+    //localstorage store into string format
+    const recipestorage = JSON.stringify(this.state.recipes);
+    localStorage.setItem("recipes", recipestorage);
+  }
+
   render() {
     return (
       <div>
